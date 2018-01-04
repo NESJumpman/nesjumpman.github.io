@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Symmetric Decryption Test</title>
+</head>
+<body>
+	<div>
+		Password: <input type="text" id="password"/>
+		<input type="button" value="Load puzzle message" onclick="loadPuzzleMessage();"/>
+		<input type="button" value="Encrypt message" onclick="encryptMessage();"/>
+		<input type="button" value="Decrypt message" onclick="decryptMessage();"/>
+	</div>
+	<div>
+		<div style="width:48%; display:inline-block; vertical-align:top">
+			Message:<br/>
+			<div id="messageDiv"><textarea rows=40 cols=100 id="message"></textarea></div>
+			<pre id="unencrypted"></pre>
+			<pre id="encrypted"></pre>
+			<pre id="final"></pre>
+		</div>
+		<div style="width:48%; display:inline-block">
+			Result:<br/>
+			<div id="resultDiv"><textarea rows=40 cols=100 id="result"></textarea></div>
+		</div>
+	</div>
+	<div>
+		<div id="activity"></div>
+	</div>
+	
+	<script type="text/javascript" src="lib/openpgp.js"></script>
+	<script type="text/javascript" src="js/symmetric.js"></script>
+	
+</body>
+</html>
