@@ -1,3 +1,4 @@
+```mumps
 puzzleList() ;
 	n data,cur,curLessOne,curPlusOne,i,curAdj
 	;
@@ -23,3 +24,4 @@ getASCII(char) ;
 	i charVal>31,charVal<91 QUIT char
 	s charVal=charVal-128  ;programmers used 80hex or 128 offsets to indicate types of breaks
 	QUIT $c(charVal)
+```
