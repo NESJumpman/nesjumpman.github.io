@@ -9,7 +9,7 @@
 * Took the ROM, dumped the section of data that had the puzzles. 
 * Previous attempt did not work, new encodings. My best guess:
 * * 128 still added for newlines
-** End of puzzles are indicated by various control characters (5, 6) and NULL (0)
+* * End of puzzles are indicated by various control characters (5, 6) and NULL (0)
 * Ended up with [all the puzzles](WOF/wofFamilyAllPuzzles.txt)
 * Javascript FileReader, to the rescue:
 * * [Javascript page](WOF/wofFamilyGenerate.html) to generate the answers.
