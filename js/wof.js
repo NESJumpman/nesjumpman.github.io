@@ -1,84 +1,40 @@
-function createPuzzlesFromBytes(bytes)
-{
-	alert("got this many bytes "+bytes.length);
-}
-
-function createPuzzlesWOF()
-{
-  let bytes = $("#wofRomData").val();
-  let $answers = $("#wofResults");
-  let puzzles = ""; 
-
-  let i = 0;
-  for (i=0; i<bytes.length; i++)
-  {
-    let curChar = bytes.charAt(i);
-    let curAdj = getASCII(curChar);
-    puzzles += curAdj;
-    if (curChar != curAdj)
-    {
-      let curLessOne = bytes.charAt(i-1);
-      if (curLessOne != getASCII(curLessOne))
-      {
-        puzzles += "\n";
-      }
-      else
-      { 
-        let curPlusOne = bytes.charAt(i+1);
-        if (curPlusOne == getASCII(curPlusOne)) puzzles += " ";
-      }
-    }
-  }
-
-  $answers.val(puzzles);
-
-}
-
 function createPuzzlesWOFFam()
 {
-
-  let bytes = $("#wofFamRomData").val();
-  let $answers = $("#wofFamResults");
-  let puzzles = ""; 
-
-  let i = 0;
-  for (i=0; i<bytes.length; i++)
-  {
-    let curChar = bytes.charAt(i);
-    if (curChar.charCodeAt(0) == 9)
-    {
-      puzzles += "\n";
-    }
-    else
-    {      
-      let curAdj = getASCII(curChar);
-      puzzles += curAdj;
+  var file = $("#fileInput")[0].files[0];
   
-      if (curChar != curAdj)
+  var reader = new FileReader();
+
+  reader.onload = function(evt) {
+      var arrayBuffer = reader.result;
+      var bytes = new Uint8Array(arrayBuffer);
+
+      let $answers = $("#wofFamResults");
+      let puzzles = "";
+
+      for (i=0; i<bytes.length; i++)
       {
-        puzzles += " ";
-/*
-        let curLessOne = bytes.charAt(i-1);
-        if (curLessOne != getASCII(curLessOne))
+        let curVal = bytes[i];
+        let curChar = String.fromCharCode(curVal);
+        if (curVal < 32)
         {
           puzzles += "\n";
         }
-        else
-        { 
-          let curPlusOne = bytes.charAt(i+1);
-          if (curPlusOne == getASCII(curPlusOne)) puzzles += " ";
+        else if (curVal < 91)
+        {      
+          puzzles += curChar
         }
-*/
+        else
+        {
+          puzzles += String.fromCharCode(curVal-128) + " ";
+        }
       }
-    }
-  }
 
-  $answers.val(puzzles);
-
-
-
+    $answers.val(puzzles);
+     
+  };
+    
+  reader.readAsArrayBuffer(file);  
 }
-
 
 function getASCII(theChar)
 {
