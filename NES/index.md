@@ -14,3 +14,11 @@
 * Javascript FileReader, to the rescue:
 * * [Javascript page](WOF/wofFamilyGenerate.html) to generate the answers.
 * * [Raw bytes](WOF/wofFamilyPuzzleBytes.nes) needed to generate the puzzle answers
+
+## Wheel of Fortune Junior Edition
+* Same formatting as Family Edition, used the same tool as above
+* And voila - [all the puzzles](WOF/wofJuniorAllPuzzles.txt)
+
+## Wheel of Fortune Vanna White
+* This one is tricky: I see no clear evidence that the puzzles are ASCII encoded.
+* Currently on hold while I consider going down this rabbit hole...
