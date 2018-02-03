@@ -1,0 +1,12 @@
+.code{
+	font-family: courier new;
+	font-weight: bold;
+}
+
+input{
+	margin:1em;
+}
+
+textarea{
+	margin:1em;
+}

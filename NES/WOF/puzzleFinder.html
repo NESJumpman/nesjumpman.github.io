@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>Wheel of Fortune Cheater</title>
+	
+	<link rel="stylesheet" href="puzzleFinder.css">
+	
+	<script src="jquery-3.3.1.slim.js"></script>
+	<script src="puzzleFinder.js"></script>
+</head>
+<body>
+	<div>
+		<p>I data mined the games to find all possible puzzles - so now we have a web-tool to search for puzzles to let you cheat at WOF.</p>
+		<p>Dont ask questions. Use it if you want. Or dont.</p>
+		
+		<h1>Quick links</h1>
+		Once you know what is going on, just use this links to jump the game you want
+		<ul>
+			<li><a href="#wof">Wheel of Fortune</a></li>
+			<li><a href="#wofFamily">Wheel of Fortune - Family Edition</a></li>
+			<li><a href="#wofJunior">Wheel of Fortune - Junior Edition</a></li>
+			<li>Wheel of Fortune - Vanna White is still a work in progress...</li>
+		</ul>
+		
+		<h1>Instructions</h1>
+		<p>
+		Enter the number of characters in each word of the solution, separated by a space.
+		You get a list of all possible solutions in the left box and a frequency analysis in the right box.
+		Just tab off of the input field to make it work. The button is there to make it easy to trigger the processing
+		Note that words that span lines because of the hyphen are treated as two words and the hyphen counts.
+		HOWEVER... there are words where the entire word, with hyphens, fits on one line
+		</p>
+		<p class="code">
+			WORLD CUP SOCCER MATCH
+		</p>
+		You would enter <span class="code"> 5 3 5 5 </span>
+		<p class="code">
+			EXECUTIVE VICE-<br/>
+			PRESIDENT<br/>
+		</p>
+		You would enter <span class="code">9 5 9</span>
+		
+		<p class="code">
+			FAST-FOOD<br/>
+			RESTAURANT<br/>
+		</p>
+		You would enter <span class="code">9 10</span>
+		
+	</div>
+	<div id="wof">
+		<h1>Wheel of Fortune</h1>
+		<input id="wofCharMap" class="charMap" type="text" /> 
+		<input type="button" type="button" value="find those puzzles!">
+	
+		<div>
+			<textarea rows="28" cols="50" class="results"></textarea>
+			<textarea rows="28" cols="30" class="freq"></textarea>
+		</div>
+	</div>
+	
+	<div id="wofFamily">
+		<h1>Wheel of Fortune Family</h1>
+		<input id="wofFamilyCharMap" class="charMap" type="text" /> 
+		<input type="button" type="button" value="find those puzzles!">
+	
+		<div>
+			<textarea rows="28" cols="50" class="results"></textarea>
+			<textarea rows="28" cols="30" class="freq"></textarea>
+		</div>
+	</div>
+	
+	<div id="wofJunior">
+		<h1>Wheel of Fortune Junior</h1>
+		<input id="wofJuniorCharMap" class="charMap" type="text" /> 
+		<input type="button" type="button" value="find those puzzles!">
+	
+		<div>
+			<textarea rows="28" cols="50" class="results"></textarea>
+			<textarea rows="28" cols="30" class="freq"></textarea>
+		</div>
+	</div>
+	
+	<p>I asked you not to have any questions... but if you still do... N E S Jumpman &lt;at&gt; gmail &lt;dot&gt; com.</p>
+	
+	<script>
+		$(document).ready(function(){
+
+			$("#wofCharMap").change(function(e) {
+				  wofFindPuzzles($("#wof"),wofAnswers);
+			});
+			
+			$("#wofFamilyCharMap").change(function(e) {
+				  wofFindPuzzles($("#wofFamily"),wofFamilyAnswers);
+			});
+			
+			$("#wofJuniorCharMap").change(function(e) {
+				  wofFindPuzzles($("#wofJunior"),wofJuniorAnswers);
+			});
+
+		});
+</script>
+<body>
+</html>
