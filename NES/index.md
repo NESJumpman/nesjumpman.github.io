@@ -1,4 +1,6 @@
 # NES stuff
+## Wheel of Fortune Cheat Tool!
+* Given all this stuff below, behold... the [cheat tool](puzzleFinder.html)
 ## Wheel of Fortune
 * Took the ROM, dumped the section of data that had the puzzles. 
 * Used this [this page](https://www.zophar.net/forums/showthread.php?t=14547#5) to get a head start on the encoding used to separate puzzles.
