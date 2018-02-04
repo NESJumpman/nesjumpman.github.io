@@ -84,7 +84,7 @@ function charFreqMap2Message(freqMap)
 	//now iterate the counts and show letters for each count (decreasing)
 	let message = "";
 	let keyArray = Object.keys(mapCounts).map(value => parseInt(value));
-	keyArray.sort((a,b)=>a-b);
+	keyArray.sort((a,b)=>b-a);
 	//for (var count in keyArray)
 	keyArray.forEach(count => {
 		let currentLine=""
@@ -94,7 +94,7 @@ function charFreqMap2Message(freqMap)
 		{
 			currentLine += letter + " ";
 		}
-		message = currentLine + "\n" + message;
+		message += currentLine + "\n";
 	});
 	
 	return message;
