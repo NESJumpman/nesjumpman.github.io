@@ -50,6 +50,15 @@
 		<h1>Wheel of Fortune</h1>
 		<input id="wofCharMap" class="charMap" type="text" /> 
 		<input type="button" type="button" value="find those puzzles!">
+		<br/>
+		<label><input type="checkbox" class="category" value="Place" />Place</label>
+		<label><input type="checkbox" class="category" value="Person" />Person</label>
+		<label><input type="checkbox" class="category" value="Landmark" />Landmark</label>
+		<label><input type="checkbox" class="category" value="Phrase" />Phrase</label>
+		<label><input type="checkbox" class="category" value="Things" />Things</label>
+		<label><input type="checkbox" class="category" value="Title" />Title</label>
+		<label><input type="checkbox" class="category" value="People" />People</label>
+		<label><input type="checkbox" class="category" value="Event" />Event</label>
 	
 		<div>
 			<textarea rows="28" cols="50" class="results"></textarea>
@@ -96,7 +105,6 @@
 		<label><input type="checkbox" class="category" value="Fictional Characters" />Fictional Characters</label>
 		
 		<label><input type="checkbox" class="category" value="" />Thing</label>
-		
 	
 		<div>
 			<textarea rows="28" cols="50" class="results"></textarea>
@@ -109,7 +117,7 @@
 	<script>
 		$(document).ready(function(){
 
-			$("#wofCharMap").change(function(e) {
+			$("#wof input").change(function(e) {
 				  wofFindPuzzles($("#wof"),wofAnswers);
 			});
 			
@@ -117,8 +125,8 @@
 				  wofFindPuzzles($("#wofFamily"),wofFamilyAnswers02);
 			});
 			
-			$("#wofJuniorCharMap").change(function(e) {
-				  wofFindPuzzles($("#wofJunior"),wofJuniorAnswers);
+			$("#wofJunior input").change(function(e) {
+				  wofFindPuzzles($("#wofJunior"),wofJuniorAnswers02);
 			});
 
 		});
