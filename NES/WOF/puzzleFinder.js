@@ -130,10 +130,11 @@ function createRegExFromCharMap($parentElem)
 	}
 	else
 	{
-		pattern = categoryString + "\\|";
+		pattern = "(" + categoryString + ")\\|";
 	}
 
 	let charCounts = charMap.split(" ");
+	let charRegex = "";
 	firstWord = true;
 	for (let i=0; i<charCounts.length; i++)
 	{
@@ -142,12 +143,20 @@ function createRegExFromCharMap($parentElem)
 		if (isNaN(charCount)) continue;
 		if (!firstWord)
 		{
-			pattern += ' ';
+			charRegex += ' ';
 		}
 		
-		pattern += '[\\w\'-]{' + charCount + '}';
+		charRegex += '[\\w\'-]{' + charCount + '}';
 
 		firstWord = false;
+	}
+
+	if (charRegex.length == 0)
+	{
+		pattern += ".*";
+	}
+	else{
+		pattern += charRegex;
 	}
 	
 	if (pattern.length > 0)
