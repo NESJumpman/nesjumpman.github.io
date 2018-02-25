@@ -18,7 +18,7 @@
 			<li><a href="#wof">Wheel of Fortune</a></li>
 			<li><a href="#wofFamily">Wheel of Fortune - Family Edition</a></li>
 			<li><a href="#wofJunior">Wheel of Fortune - Junior Edition</a></li>
-			<li>Wheel of Fortune - Vanna White is still a work in progress...</li>
+			<li><a href="#wofVanna">Wheel of Fortune - featuring Vanna White</a></li>
 		</ul>
 		
 		<h1>Instructions</h1>
@@ -111,6 +111,29 @@
 			<textarea rows="28" cols="30" class="freq"></textarea>
 		</div>
 	</div>
+
+	<div id="wofVanna">
+		<h1>Wheel of Fortune - featuring Vanna White</h1>
+		<input id="wofVannaCharMap" class="charMap" type="text" /> 
+		<input type="button" type="button" value="find those puzzles!">
+		<br/>
+		<label><input type="checkbox" class="category" value="Thing" />Thing</label>
+		<label><input type="checkbox" class="category" value="Place" />Place</label>
+		<label><input type="checkbox" class="category" value="Fictional Character" />Fictional Character</label>
+		<label><input type="checkbox" class="category" value="Things" />Things</label>
+		<label><input type="checkbox" class="category" value="Phrase" />Phrase</label>
+		<label><input type="checkbox" class="category" value="Title" />Title</label>
+		<label><input type="checkbox" class="category" value="People" />People</label>
+		<label><input type="checkbox" class="category" value="Event" />Event</label>
+		<label><input type="checkbox" class="category" value="Person" />Person</label>
+		<label><input type="checkbox" class="category" value="Before and After" />Before and After</label>
+		<label><input type="checkbox" class="category" value="Same Name" />Same Name</label>
+		
+		<div>
+			<textarea rows="28" cols="50" class="results"></textarea>
+			<textarea rows="28" cols="30" class="freq"></textarea>
+		</div>
+	</div>
 	
 	<p>I asked you not to have any questions... but if you still do... N E S Jumpman &lt;at&gt; gmail &lt;dot&gt; com.</p>
 	
@@ -118,7 +141,7 @@
 		$(document).ready(function(){
 
 			$("#wof input").change(function(e) {
-				  wofFindPuzzles($("#wof"),wofAnswers);
+				  wofFindPuzzles($("#wof"),wofAnswers02);
 			});
 			
 			$("#wofFamily input").change(function(e) {
@@ -127,6 +150,10 @@
 			
 			$("#wofJunior input").change(function(e) {
 				  wofFindPuzzles($("#wofJunior"),wofJuniorAnswers02);
+			});
+
+			$("#wofVanna input").change(function(e) {
+				  wofFindPuzzles($("#wofVanna"),wofVannaAnswers02);
 			});
 
 		});
