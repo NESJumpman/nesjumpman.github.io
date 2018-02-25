@@ -61,6 +61,17 @@
 		<h1>Wheel of Fortune Family</h1>
 		<input id="wofFamilyCharMap" class="charMap" type="text" /> 
 		<input type="button" type="button" value="find those puzzles!">
+		<br/>
+		<label><input type="checkbox" class="category" value="Place" />Place</label>
+		<label><input type="checkbox" class="category" value="Person" />Person</label>
+		<label><input type="checkbox" class="category" value="Thing" />Thing</label>
+		<label><input type="checkbox" class="category" value="Fictional Character" />Fictional Character</label>
+		<label><input type="checkbox" class="category" value="Phrase" />Phrase</label>
+		<label><input type="checkbox" class="category" value="Title" />Title</label>
+		<label><input type="checkbox" class="category" value="People" />People</label>
+		<label><input type="checkbox" class="category" value="Event" />Event</label>
+		<label><input type="checkbox" class="category" value="Same name" />Same Name</label>
+		<label><input type="checkbox" class="category" value="Things" />Things</label>
 	
 		<div>
 			<textarea rows="28" cols="50" class="results"></textarea>
@@ -72,6 +83,20 @@
 		<h1>Wheel of Fortune Junior</h1>
 		<input id="wofJuniorCharMap" class="charMap" type="text" /> 
 		<input type="button" type="button" value="find those puzzles!">
+		<br/>
+		<label><input type="checkbox" class="category" value="Place" />Place</label>
+		<label><input type="checkbox" class="category" value="Person" />Person</label>
+		<label><input type="checkbox" class="category" value="Thing" />Thing</label>
+		<label><input type="checkbox" class="category" value="Fictional Character" />Fictional Character</label>
+		<label><input type="checkbox" class="category" value="Phrase" />Phrase</label>
+		<label><input type="checkbox" class="category" value="Title" />Title</label>
+		<label><input type="checkbox" class="category" value="People" />People</label>
+		<label><input type="checkbox" class="category" value="Things" />Things</label>
+		<label><input type="checkbox" class="category" value="Event" />Event</label>
+		<label><input type="checkbox" class="category" value="Fictional Characters" />Fictional Characters</label>
+		
+		<label><input type="checkbox" class="category" value="" />Thing</label>
+		
 	
 		<div>
 			<textarea rows="28" cols="50" class="results"></textarea>
@@ -88,8 +113,8 @@
 				  wofFindPuzzles($("#wof"),wofAnswers);
 			});
 			
-			$("#wofFamilyCharMap").change(function(e) {
-				  wofFindPuzzles($("#wofFamily"),wofFamilyAnswers);
+			$("#wofFamily input").change(function(e) {
+				  wofFindPuzzles($("#wofFamily"),wofFamilyAnswers02);
 			});
 			
 			$("#wofJuniorCharMap").change(function(e) {

@@ -24,3 +24,5 @@
 ## Wheel of Fortune Vanna White
 * This one is tricky: I see no clear evidence that the puzzles are ASCII encoded.
 * Currently on hold while I consider going down this rabbit hole...
+* Thanks to someone in [NESCardinality](https://www.twitch.tv/nescardinality) chat, I found [this site](http://inuyasha.rustedlogic.net/wof-puzzles/) that gave me the final anser list!
+* for completeness, a [copy here](WOF/wofVannaPuzzles02.txt)
